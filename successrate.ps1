@@ -1,4 +1,12 @@
-﻿$log = docker logs storagenode 2>&1
+param(
+    $Path
+)
+
+if (-not $Path) {
+    $log = docker logs storagenode 2>&1
+} else {
+    $log = Get-Content $Path
+}
 
 "========== AUDIT ============="
 
