@@ -4,3 +4,9 @@
 2. Run it
 ```
 .\successrate.ps1
+```
+
+To specify path to the log file, you can use an optional parameter `-Path`:
+```
+.\successrate.ps1 -Path x:\storagenode\node.log
+```
