@@ -10,13 +10,13 @@ if (-not $Path) {
 
 "========== AUDIT ============="
 
-$auditsSuccess = ($log | sls GET_AUDIT | sls downloaded).Count
+$auditsSuccess = ($log | Select-String GET_AUDIT | Select-String downloaded).Count
 "Successful:`t`t" + $auditsSuccess
 
-$auditsFailed = ($log | sls GET_AUDIT | sls failed | sls open -NotMatch).Count
+$auditsFailed = ($log | Select-String GET_AUDIT | Select-String failed | Select-String open -NotMatch).Count
 "Recoverable failed:`t" + $auditsFailed
 
-$auditsFailedCritical = ($log | sls GET_AUDIT | sls failed | sls open).Count
+$auditsFailedCritical = ($log | Select-String GET_AUDIT | Select-String failed | Select-String open).Count
 "Unrecoverable failed:`t" + $auditsFailedCritical
 
 if (($auditsSuccess + $auditsFailed + $auditsFailedCritical) -ge 1) {
@@ -35,10 +35,10 @@ if (($auditsSuccess + $auditsFailedCritical) -ge 1) {
 
 "========== DOWNLOAD =========="
 
-$dl_success = ($log | sls '"GET"' | sls downloaded).Count
+$dl_success = ($log | Select-String '"GET"' | Select-String downloaded).Count
 "Successful:`t`t" + $dl_success
 
-$dl_failed = ($log | sls '"GET"' | sls failed).Count
+$dl_failed = ($log | Select-String '"GET"' | Select-String failed).Count
 "Failed:`t`t`t" + $dl_failed
 
 if (($dl_success + $dl_failed) -ge 1) {
@@ -50,13 +50,13 @@ if (($dl_success + $dl_failed) -ge 1) {
 
 "========== UPLOAD ============"
 
-$put_success = ($log | sls '"PUT"' | sls uploaded).Count
+$put_success = ($log | Select-String '"PUT"' | Select-String uploaded).Count
 "Successful:`t`t" + $put_success
 
-$put_rejected = ($log | sls '"PUT"' | sls rejected).Count
+$put_rejected = ($log | Select-String '"PUT"' | Select-String rejected).Count
 "Rejected:`t`t" + $put_rejected
 
-$put_failed = ($log | sls '"PUT"' | sls failed).Count
+$put_failed = ($log | Select-String '"PUT"' | Select-String failed).Count
 "Failed:`t`t`t" + $put_failed
 
 if (($put_success + $put_rejected) -ge 1) {
@@ -75,10 +75,10 @@ if (($put_success + $put_failed) -ge 1) {
 
 "========== REPAIR DOWNLOAD ==="
 
-$get_repair_success = ($log | sls GET_REPAIR | sls downloaded).Count
+$get_repair_success = ($log | Select-String GET_REPAIR | Select-String downloaded).Count
 "Successful:`t`t" + $get_repair_success
 
-$get_repair_failed = ($log | sls GET_REPAIR | sls failed).Count
+$get_repair_failed = ($log | Select-String GET_REPAIR | Select-String failed).Count
 "Failed:`t`t`t" + $get_repair_failed
 
 if (($get_repair_success + $get_repair_failed) -ge 1) {
@@ -90,10 +90,10 @@ if (($get_repair_success + $get_repair_failed) -ge 1) {
 
 "========== REPAIR UPLOAD ====="
 
-$put_repair_success = ($log | sls PUT_REPAIR | sls uploaded).Count
+$put_repair_success = ($log | Select-String PUT_REPAIR | Select-String uploaded).Count
 "Successful:`t`t" + $get_repair_success
 
-$put_repair_failed = ($log | sls PUT_REPAIR | sls failed).Count
+$put_repair_failed = ($log | Select-String PUT_REPAIR | Select-String failed).Count
 "Failed:`t`t`t" + $put_repair_failed
 
 if (($put_repair_success + $put_repair_failed) -ge 1) {
