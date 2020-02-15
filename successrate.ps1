@@ -91,7 +91,7 @@ if (($get_repair_success + $get_repair_failed) -ge 1) {
 "========== REPAIR UPLOAD ====="
 
 $put_repair_success = ($log | Select-String PUT_REPAIR | Select-String uploaded).Count
-"Successful:`t`t" + $get_repair_success
+"Successful:`t`t" + $put_repair_success
 
 $put_repair_failed = ($log | Select-String PUT_REPAIR | Select-String failed).Count
 "Failed:`t`t`t" + $put_repair_failed
