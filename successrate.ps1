@@ -26,11 +26,11 @@ if (($auditsSuccess + $auditsFailed + $auditsFailedCritical) -ge 1) {
     $audits_success_ratio = 0.00
 }
 
-Write-Host "Critically failed:`t" + $auditsFailedCritical -ForegroundColor Red
+Write-Host ("Critically failed:`t" + $auditsFailedCritical) -ForegroundColor Red
 Write-Host "Critical Fail Rate:`t{0:N}%" -f $audits_critical_ratio
-Write-Host "Recoverable failed:`t" + $auditsFailed
+Write-Host ("Recoverable failed:`t" + $auditsFailed)
 Write-Host "Recoverable Fail Rate:`t{0:N}%" -f $audits_failed_ratio
-Write-Host "Successful:`t`t" + $auditsSuccess -ForegroundColor Green
+Write-Host ("Successful:`t`t" + $auditsSuccess) -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $audits_success_ratio
 
 Write-Host "========== DOWNLOAD =========="  -ForegroundColor Cyan
@@ -51,11 +51,11 @@ if (($dl_success + $dl_failed + $dl_canceled) -ge 1) {
     $dl_ratio = 0.00
 }
 
-Write-Host "Failed:`t`t`t" + $dl_failed -ForegroundColor Red
+Write-Host ("Failed:`t`t`t" + $dl_failed) -ForegroundColor Red
 Write-Host "Fail Rate:`t`t{0:N}%" -f $dl_failed_ratio
-Write-Host "Canceled:`t`t" + $dl_canceled
+Write-Host ("Canceled:`t`t" + $dl_canceled)
 Write-Host "Cancel Rate:`t`t{0:N}%" -f $dl_canceled_ratio
-Write-Host "Successful:`t`t" + $dl_success -ForegroundColor Green
+Write-Host ("Successful:`t`t" + $dl_success) -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $dl_ratio
 
 Write-Host "========== UPLOAD ============"  -ForegroundColor Cyan
@@ -80,14 +80,14 @@ if (($put_success + $put_rejected + $put_failed + $put_canceled) -ge 1) {
     $put_ratio = 0.00
 }
 
-Write-Host "Rejected:`t`t" + $put_rejected
+Write-Host ("Rejected:`t`t" + $put_rejected)
 Write-Host "Acceptance Rate:`t{0:N}%" -f $put_accept_ratio
 "---------- accepted ----------"
-Write-Host "Failed:`t`t`t" + $put_failed -ForegroundColor Red
+Write-Host ("Failed:`t`t`t" + $put_failed) -ForegroundColor Red
 Write-Host "Fail Rate:`t`t{0:N}%" -f $put_failed_ratio
-Write-Host "Canceled:`t`t" + $put_canceled
+Write-Host ("Canceled:`t`t" + $put_canceled)
 Write-Host "Cancel Rate:`t`t{0:N}%" -f $put_canceled_ratio
-Write-Host "Successful:`t`t" + $put_success -ForegroundColor Green
+Write-Host ("Successful:`t`t" + $put_success) -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $put_ratio
 
 Write-Host "========== REPAIR DOWNLOAD ==="  -ForegroundColor Cyan
@@ -108,11 +108,11 @@ if (($get_repair_success + $get_repair_failed + $get_repair_canceled) -ge 1) {
     $get_repair_ratio = 0.00
 }
 
-Write-Host "Failed:`t`t`t" + $get_repair_failed -ForegroundColor Red
+Write-Host ("Failed:`t`t`t" + $get_repair_failed) -ForegroundColor Red
 Write-Host "Fail Rate:`t`t{0:N}%" -f $get_repair_failed_ratio
-Write-Host "Canceled:`t`t" + $get_repair_canceled
+Write-Host ("Canceled:`t`t" + $get_repair_canceled)
 Write-Host "Cancel Rate:`t`t{0:N}%" -f $get_repair_canceled_ratio
-Write-Host "Successful:`t`t" + $get_repair_success -ForegroundColor Green
+Write-Host ("Successful:`t`t" + $get_repair_success) -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $get_repair_ratio
 
 Write-Host "========== REPAIR UPLOAD ====="  -ForegroundColor Cyan
@@ -133,9 +133,9 @@ if (($put_repair_success + $put_repair_failed + $put_repair_canceled) -ge 1) {
     $put_repair_ratio = 0.00
 }
 
-Write-Host "Failed:`t`t`t" + $put_repair_failed -ForegroundColor Red
+Write-Host ("Failed:`t`t`t" + $put_repair_failed) -ForegroundColor Red
 Write-Host "Fail Rate:`t`t{0:N}%" -f $put_repair_failed_ratio
-Write-Host "Canceled:`t`t" + $put_repair_canceled
+Write-Host ("Canceled:`t`t" + $put_repair_canceled)
 Write-Host "Cancel Rate:`t`t{0:N}%" -f $put_repair_canceled_ratio
-Write-Host "Successful:`t`t" + $put_repair_success -ForegroundColor Green
+Write-Host ("Successful:`t`t" + $put_repair_success) -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $put_repair_ratio
