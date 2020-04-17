@@ -8,7 +8,7 @@ if (-not $Path) {
     $log = Get-Content $Path
 }
 
-"========== AUDIT ============="
+Write-Host "========== AUDIT ============="  -ForegroundColor Cyan
 
 $auditsSuccess = ($log | Select-String GET_AUDIT | Select-String downloaded).Count
 
@@ -33,7 +33,7 @@ Write-Host "Recoverable Fail Rate:`t{0:N}%" -f $audits_failed_ratio
 Write-Host "Successful:`t`t" + $auditsSuccess -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $audits_success_ratio
 
-"========== DOWNLOAD =========="
+Write-Host "========== DOWNLOAD =========="  -ForegroundColor Cyan
 
 $dl_success = ($log | Select-String '"GET"' | Select-String downloaded).Count
 
@@ -58,7 +58,7 @@ Write-Host "Cancel Rate:`t`t{0:N}%" -f $dl_canceled_ratio
 Write-Host "Successful:`t`t" + $dl_success -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $dl_ratio
 
-"========== UPLOAD ============"
+Write-Host "========== UPLOAD ============"  -ForegroundColor Cyan
 
 $put_success = ($log | Select-String '"PUT"' | Select-String uploaded).Count
 
@@ -90,7 +90,7 @@ Write-Host "Cancel Rate:`t`t{0:N}%" -f $put_canceled_ratio
 Write-Host "Successful:`t`t" + $put_success -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $put_ratio
 
-"========== REPAIR DOWNLOAD ==="
+Write-Host "========== REPAIR DOWNLOAD ==="  -ForegroundColor Cyan
 
 $get_repair_success = ($log | Select-String GET_REPAIR | Select-String downloaded).Count
 
@@ -115,7 +115,7 @@ Write-Host "Cancel Rate:`t`t{0:N}%" -f $get_repair_canceled_ratio
 Write-Host "Successful:`t`t" + $get_repair_success -ForegroundColor Green
 Write-Host "Success Rate:`t`t{0:N}%" -f $get_repair_ratio
 
-"========== REPAIR UPLOAD ====="
+Write-Host "========== REPAIR UPLOAD ====="  -ForegroundColor Cyan
 
 $put_repair_success = ($log | Select-String PUT_REPAIR | Select-String uploaded).Count
 
