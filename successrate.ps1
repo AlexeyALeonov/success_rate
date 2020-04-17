@@ -53,7 +53,7 @@ if (($dl_success + $dl_failed + $dl_canceled) -ge 1) {
 
 Write-Host ("Failed:`t`t`t" + $dl_failed) -ForegroundColor Red
 Write-Host ("Fail Rate:`t`t{0:N}%" -f $dl_failed_ratio)
-Write-Host ("Canceled:`t`t" + $dl_canceled)
+Write-Host ("Canceled:`t`t" + $dl_canceled) -ForegroundColor DarkYellow
 Write-Host ("Cancel Rate:`t`t{0:N}%" -f $dl_canceled_ratio)
 Write-Host ("Successful:`t`t" + $dl_success) -ForegroundColor Green
 Write-Host ("Success Rate:`t`t{0:N}%" -f $dl_ratio)
@@ -85,7 +85,7 @@ Write-Host ("Acceptance Rate:`t{0:N}%" -f $put_accept_ratio)
 "---------- accepted ----------"
 Write-Host ("Failed:`t`t`t" + $put_failed) -ForegroundColor Red
 Write-Host ("Fail Rate:`t`t{0:N}%" -f $put_failed_ratio)
-Write-Host ("Canceled:`t`t" + $put_canceled)
+Write-Host ("Canceled:`t`t" + $put_canceled) -ForegroundColor DarkYellow
 Write-Host ("Cancel Rate:`t`t{0:N}%" -f $put_canceled_ratio)
 Write-Host ("Successful:`t`t" + $put_success) -ForegroundColor Green
 Write-Host ("Success Rate:`t`t{0:N}%" -f $put_ratio)
@@ -110,7 +110,7 @@ if (($get_repair_success + $get_repair_failed + $get_repair_canceled) -ge 1) {
 
 Write-Host ("Failed:`t`t`t" + $get_repair_failed) -ForegroundColor Red
 Write-Host ("Fail Rate:`t`t{0:N}%" -f $get_repair_failed_ratio)
-Write-Host ("Canceled:`t`t" + $get_repair_canceled)
+Write-Host ("Canceled:`t`t" + $get_repair_canceled) -ForegroundColor DarkYellow
 Write-Host ("Cancel Rate:`t`t{0:N}%" -f $get_repair_canceled_ratio)
 Write-Host ("Successful:`t`t" + $get_repair_success) -ForegroundColor Green
 Write-Host ("Success Rate:`t`t{0:N}%" -f $get_repair_ratio)
@@ -135,7 +135,7 @@ if (($put_repair_success + $put_repair_failed + $put_repair_canceled) -ge 1) {
 
 Write-Host ("Failed:`t`t`t" + $put_repair_failed) -ForegroundColor Red
 Write-Host ("Fail Rate:`t`t{0:N}%" -f $put_repair_failed_ratio)
-Write-Host ("Canceled:`t`t" + $put_repair_canceled)
+Write-Host ("Canceled:`t`t" + $put_repair_canceled) -ForegroundColor DarkYellow
 Write-Host ("Cancel Rate:`t`t{0:N}%" -f $put_repair_canceled_ratio)
 Write-Host ("Successful:`t`t" + $put_repair_success) -ForegroundColor Green
 Write-Host ("Success Rate:`t`t{0:N}%" -f $put_repair_ratio)
