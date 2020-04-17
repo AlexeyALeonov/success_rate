@@ -28,7 +28,7 @@ if (($auditsSuccess + $auditsFailed + $auditsFailedCritical) -ge 1) {
 
 Write-Host ("Critically failed:`t" + $auditsFailedCritical) -ForegroundColor Red
 Write-Host ("Critical Fail Rate:`t{0:N}%" -f $audits_critical_ratio)
-Write-Host ("Recoverable failed:`t" + $auditsFailed)
+Write-Host ("Recoverable failed:`t" + $auditsFailed) -ForegroundColor DarkYellow
 Write-Host ("Recoverable Fail Rate:`t{0:N}%" -f $audits_failed_ratio)
 Write-Host ("Successful:`t`t" + $auditsSuccess) -ForegroundColor Green
 Write-Host ("Success Rate:`t`t{0:N}%" -f $audits_success_ratio)
