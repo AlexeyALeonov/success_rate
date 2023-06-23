@@ -12,9 +12,9 @@ Write-Host "========== AUDIT ============="  -ForegroundColor Cyan
 
 $auditsSuccess = ($log | Select-String GET_AUDIT | Select-String downloaded).Count
 
-$auditsFailed = ($log | Select-String GET_AUDIT | Select-String failed | Select-String open -NotMatch).Count
+$auditsFailed = ($log | Select-String GET_AUDIT | Select-String failed | Select-String exist -NotMatch).Count
 
-$auditsFailedCritical = ($log | Select-String GET_AUDIT | Select-String failed | Select-String open).Count
+$auditsFailedCritical = ($log | Select-String GET_AUDIT | Select-String failed | Select-String exist).Count
 
 if (($auditsSuccess + $auditsFailed + $auditsFailedCritical) -ge 1) {
     $audits_failed_ratio = $auditsFailed / ($auditsSuccess + $auditsFailed + $auditsFailedCritical) * 100
